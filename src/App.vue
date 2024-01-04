@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div>
-      <b-button variant="danger" v-b-modal="'new-node-modal'">Append</b-button>
-      <b-button variant="success">Button</b-button>
+      <!-- <b-button variant="danger" v-b-modal="'new-node-modal'">Append</b-button> -->
+      <!-- <b-button variant="success">Button</b-button> -->
       <b-modal id="new-node-modal" @ok="onNewNode" @cancel="onCancleNode">
         <b-form-input v-model="new_name" placeholder="Enter your name"></b-form-input>
         <b-form-input v-model="new_intro" placeholder="Enter your Introducer" class="mt-1"></b-form-input>
