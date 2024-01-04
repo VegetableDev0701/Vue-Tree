@@ -7,7 +7,7 @@
       <div class="center-bar" :class="{'isRight': calcLR(1)}"></div>
       <div v-for="(n, index) in LNodes" :key="index" v-bind:style="calcNodePos(index)">
         <div class="hoz-bar" v-bind:style="{'left' : calcLR(index) ? '50%' : '0px'}" v-if="index != 0"></div>
-          <node-component v-bind:NData="n"/>
+          <node-component v-bind:NData="n" v-bind:rootCode="HNode.code"/>
         <div class="up-bar" v-if="index != 0"></div>
         <div class="center-bar" :class="{'isRight': calcLR(index)}" v-if="index != 0"></div>
       </div>
@@ -18,7 +18,7 @@
       <div class="center-bar" :class="{'isLeft': calcLR(1)}"></div>
       <div v-for="(n, index) in RNodes" :key="index" v-bind:style="calcNodePos(index)">
         <div class="hoz-bar" v-bind:style="{'left' : calcLR(index) ? '50%' : '0px'}" v-if="index != 0"></div>
-          <node-component v-bind:NData="n"/>
+          <node-component v-bind:NData="n" v-bind:rootCode="HNode.code"/>
         <div class="up-bar" v-if="index != 0"></div>
         <div class="center-bar" :class="{'isRight': calcLR(index)}" v-if="index != 0"></div>
       </div>

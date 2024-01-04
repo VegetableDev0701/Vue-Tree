@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:click="onNodeClick(NData.code)">
     <div class="node-container text-center margin-top-40 node-center" :class="{'blue-container': rootCode == NData.introducer_code, 'main-container': isRoot}">
       <p>{{ NData.code }}</p>
       <span>{{ NData.name }}</span>
@@ -9,6 +9,7 @@
 <script>
 import cons from '../constant'
 import utils from '../utils'
+import { mapActions } from 'vuex'
 export default {
   name: 'NodeComponent',
   props: {
@@ -31,8 +32,8 @@ export default {
       }
     },
     rootCode: {
-      type: Number,
-      default: 1
+      type: String,
+      default: '00001'
     },
     isRoot: {
       type: Boolean,
@@ -47,6 +48,14 @@ export default {
   computed: {
     podNum: function () {
       return utils.pad(this.NData.idx, 10)
+    }
+  },
+  methods: {
+    ...mapActions({
+      ACT_getUpNode: 'ACT_getUpNode'
+    }),
+    onNodeClick (code) {
+      this.ACT_getUpNode(code)
     }
   }
 }

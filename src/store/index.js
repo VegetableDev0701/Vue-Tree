@@ -41,6 +41,12 @@ export default new Vuex.Store({
         .then((res) => {
           context.commit('MUT_setNode', res.data)
         })
+    },
+    ACT_getUpNode (context, nCode) {
+      return axios.get(`/api/policyholders/${nCode}/top`)
+        .then((res) => {
+          context.commit('MUT_setNode', res.data)
+        })
     }
   },
   modules: {
