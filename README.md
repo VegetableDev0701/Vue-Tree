@@ -6,7 +6,10 @@ first of You must clone this Repo from Git
 
 1. git clone https://github.com/VegetableDev0701/Vue-Tree.git
 2. cd Vue-Tree
-3. npm install
+3. npm install 
+
+**** IF YOU HAVE ERROR ON NPM INSTALL COMMAND, PLEASE REDO WITH 
+     npm install --force ****
 
 ```
 
@@ -14,7 +17,14 @@ first of You must clone this Repo from Git
 ```
 npm run serve
 
-after you run this project, you can check project running on your browser on Port 8080
+After you run this project, you can check project running on your browser on Port 8080 ( http://localhost:8080 )
+
+This project is only for test && function lists are below.
+
+1. You can search from Main Root by clicking 'Search Main Root' Button
+2. clicking at Node( named test2), you can check graph changes with Node(named test2) Rooted
+3. When you mouse over at Root Node, you can see up arrow and can go up Node Rooted graph by Clicking
+4. CAUTION! this works only with Mocks, so when you click Nodes (excluding Root & test2) , No works implements & error will be occur.
 
 ```
 
