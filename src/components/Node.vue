@@ -52,10 +52,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      ACT_getUpNode: 'ACT_getUpNode'
+      ACT_getWidthNode: 'ACT_getWidthNode'
     }),
     onNodeClick (code) {
-      this.ACT_getUpNode(code)
+      this.ACT_getWidthNode(code)
     }
   }
 }

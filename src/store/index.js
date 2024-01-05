@@ -44,7 +44,7 @@ export default new Vuex.Store({
           context.commit('MUT_setNode', res.data)
         })
     },
-    ACT_getUpNode (context, nCode) {
+    ACT_getWidthNode (context, nCode) {
       return axios.get(`/api/policyholders/${nCode}/top`)
         .then((res) => {
           context.commit('MUT_setNode', res.data)
