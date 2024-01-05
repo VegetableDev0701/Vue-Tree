@@ -13,6 +13,9 @@ first of You must clone this Repo from Git
 ### Compiles and hot-reloads for development
 ```
 npm run serve
+
+after you run this project, you can check project running on your browser on Port 8080
+
 ```
 
 ### Compiles and minifies for production
