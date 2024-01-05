@@ -23,15 +23,12 @@ export default new Vuex.Store({
       state.nodes.push(nodeInfo)
     },
     MUT_setNode (state, info) {
-      // state.headNode.code = info.code
-      // state.headNode.name = info.name
       Vue.set(state.headNode, 'code', info.code)
       Vue.set(state.headNode, 'name', info.name)
       state.headNode.registration_date = info.registration_date
       state.headNode.introducer_code = info.introducer_code
       state.leftNodes = info.l
       state.rightNodes = info.r
-      console.log(state)
     }
   },
   actions: {

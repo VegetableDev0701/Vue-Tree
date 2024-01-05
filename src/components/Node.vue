@@ -1,8 +1,13 @@
 <template>
-  <div v-on:click="onNodeClick(NData.code)">
+  <div v-on:click="onNodeClick(NData.code)" class="root-Container">
     <div class="node-container text-center margin-top-40 node-center" :class="{'blue-container': rootCode == NData.introducer_code, 'main-container': isRoot}">
       <p>{{ NData.code }}</p>
       <span>{{ NData.name }}</span>
+    </div>
+    <div v-if="isRoot" class="up-arrow" v-on:click="onGetParent(rootCode)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+      </svg>
     </div>
   </div>
 </template>
@@ -56,6 +61,9 @@ export default {
     }),
     onNodeClick (code) {
       this.ACT_getWidthNode(code)
+    },
+    onGetParent (parentCode) {
+      this.ACT_getWidthNode(parentCode)
     }
   }
 }
@@ -83,5 +91,18 @@ export default {
 
 .margin-top-40 {
   margin-top: 40px;
+}
+
+.up-arrow {
+  display: none;
+  position: absolute;
+  left: calc(50% + 70px);
+  top: 20px;
+}
+.root-Container {
+  position: relative;
+}
+.root-Container:hover div.up-arrow{
+  display: block;
 }
 </style>
