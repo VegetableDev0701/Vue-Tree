@@ -63,7 +63,9 @@ export default {
       this.ACT_getWidthNode(code)
     },
     onGetParent (parentCode) {
-      this.ACT_getWidthNode(parentCode)
+      if (parentCode !== '-1') {
+        this.ACT_getWidthNode(parentCode)
+      }
     }
   }
 }

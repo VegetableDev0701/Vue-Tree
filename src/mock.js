@@ -8,10 +8,10 @@ const code6 = '00006'
 const code7 = '00007'
 const code8 = '00008'
 const code9 = '00009'
-const code10 = '00010'
-const code11 = '00011'
-const code12 = '00012'
-const code13 = '00013'
+const code10 = '000010'
+const code11 = '000011'
+const code12 = '000012'
+const code13 = '000013'
 module.exports = function (axios) {
   var mock = new MockAdapter(axios)
   mock.onGet(`/api/policyholders/${code13}/top`).reply(200, {
@@ -544,7 +544,7 @@ module.exports = function (axios) {
       registration_date: new Date(),
       introducer_code: '00007'
     }, {
-      code: '00010',
+      code: '000010',
       name: 'test10',
       registration_date: new Date(),
       introducer_code: '00005'
@@ -565,17 +565,17 @@ module.exports = function (axios) {
       registration_date: new Date(),
       introducer_code: '00001'
     }, {
-      code: '00011',
+      code: '000011',
       name: 'test11',
       registration_date: new Date(),
       introducer_code: '00004'
     }, {
-      code: '00012',
+      code: '000012',
       name: 'test12',
       registration_date: new Date(),
       introducer_code: '000010'
     }, {
-      code: '00013',
+      code: '000013',
       name: 'test13',
       registration_date: new Date(),
       introducer_code: '000010'

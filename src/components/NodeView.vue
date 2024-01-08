@@ -2,9 +2,9 @@
   <div>
     <node-component v-bind:NData="HNode" v-bind:isRoot="true" v-bind:rootCode="HNode.introducer_code"/>
     <div class="part-container">
-      <div class="hoz-bar" v-bind:style="{'left' : calcLR(0) ? '0px' : '50%'}"></div>
-      <div class="up-bar"></div>
-      <div class="center-bar" :class="{'isRight': calcLR(1)}"></div>
+      <div class="hoz-bar" v-bind:style="{'left' : calcLR(0) ? '0px' : '50%'}" v-if="LNodes.length"></div>
+      <div class="up-bar" v-if="LNodes.length"></div>
+      <div class="center-bar" :class="{'isRight': calcLR(1)}" v-if="LNodes.length"></div>
       <div v-for="(n, index) in LNodes" :key="index" v-bind:style="calcNodePos(index)">
         <div class="hoz-bar" v-bind:style="{'left' : calcLR(index) ? '50%' : '0px'}" v-if="index != 0"></div>
           <node-component v-bind:NData="n" v-bind:rootCode="HNode.code"/>
@@ -13,9 +13,9 @@
       </div>
     </div>
     <div class="part-container">
-      <div class="hoz-bar" v-bind:style="{'left' : calcLR(1) ? '0px' : '50%'}"></div>
-      <div class="up-bar"></div>
-      <div class="center-bar" :class="{'isLeft': calcLR(1)}"></div>
+      <div class="hoz-bar" v-bind:style="{'left' : calcLR(1) ? '0px' : '50%'}" v-if="RNodes.length"></div>
+      <div class="up-bar" v-if="RNodes.length"></div>
+      <div class="center-bar" :class="{'isLeft': calcLR(1)}" v-if="RNodes.length"></div>
       <div v-for="(n, index) in RNodes" :key="index" v-bind:style="calcNodePos(index)">
         <div class="hoz-bar" v-bind:style="{'left' : calcLR(index) ? '50%' : '0px'}" v-if="index != 0"></div>
           <node-component v-bind:NData="n" v-bind:rootCode="HNode.code"/>
