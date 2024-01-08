@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .up-bar {
   width: 0px;
-  border: 2px solid green;
+  border: 2px solid #2f2f2f;
   height: 20px;
   position: absolute;
   left: 50%;
@@ -86,7 +86,7 @@ export default {
 }
 
 .hoz-bar {
-  border: 2px solid green;
+  border: 2px solid #2f2f2f;
   position: absolute;
   top: 20px;
   width: calc(50%);
@@ -100,7 +100,7 @@ export default {
 .center-bar {
   position: absolute;
   top: 0px;
-  border: 2px solid green;
+  border: 2px solid #2f2f2f;
   height: 20px;
 }
 .isRight {

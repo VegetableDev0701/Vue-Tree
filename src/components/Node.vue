@@ -1,7 +1,7 @@
 <template>
-  <div v-on:click="onNodeClick(NData.code)" class="root-Container">
-    <div class="node-container text-center margin-top-40 node-center" :class="{'blue-container': rootCode == NData.introducer_code, 'main-container': isRoot}">
-      <p>{{ NData.code }}</p>
+  <div class="root-Container">
+    <div class="node-container margin-top-40 node-center" :class="{'sub-container': rootCode == NData.introducer_code, 'main-container': isRoot}">
+      <span :class="{'root-code': isRoot}" v-on:click="onNodeClick(NData.code)">{{ NData.code }}</span> <br/>
       <span>{{ NData.name }}</span>
     </div>
     <div v-if="isRoot" class="up-arrow" v-on:click="onGetParent(rootCode)">
@@ -70,23 +70,30 @@ export default {
 </script>
 <style scoped>
 .node-container {
-  border: 1px solid black;
-  border-radius: 5%;
+  background-color: #e6e6e6;
+  padding: 10px;
+  text-align: left;
+  border: 3px solid #231e00;
+  border-radius: 10px;
   width: 120px;
-  height: 80px;
+  height: 70px;
+}
+.node-container span:first-child {
+  color: #63959e;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .node-center {
   margin: 0 auto;
 }
 
-.blue-container {
-  border: 1px solid green;
-  background-color: green;
+.sub-container {
+  background-color: #8fd04e;
 }
 
 .main-container {
-  background-color: yellow;
+  background-color: #fef445;
 }
 
 .margin-top-40 {
@@ -104,5 +111,10 @@ export default {
 }
 .root-Container:hover div.up-arrow{
   display: block;
+}
+.root-code {
+  color: #001702;
+  text-decoration:none !important;
+  cursor: pointer;
 }
 </style>
