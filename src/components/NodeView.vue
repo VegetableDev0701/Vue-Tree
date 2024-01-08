@@ -1,6 +1,6 @@
 <template>
   <div>
-    <node-component v-bind:NData="HNode" v-bind:isRoot="true"/>
+    <node-component v-bind:NData="HNode" v-bind:isRoot="true" v-bind:rootCode="HNode.introducer_code"/>
     <div class="part-container">
       <div class="hoz-bar" v-bind:style="{'left' : calcLR(0) ? '0px' : '50%'}"></div>
       <div class="up-bar"></div>
