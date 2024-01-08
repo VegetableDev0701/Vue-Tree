@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <div>
-      <!-- <b-button variant="danger" v-b-modal="'new-node-modal'">Append</b-button> -->
-      <b-button variant="success" v-on:click="onMainRoot">Search Main Root</b-button>
-      <b-modal id="new-node-modal" @ok="onNewNode" @cancel="onCancleNode">
-        <b-form-input v-model="new_name" placeholder="Enter your name"></b-form-input>
-        <b-form-input v-model="new_intro" placeholder="Enter your Introducer" class="mt-1"></b-form-input>
-      </b-modal>
+    <div class="title">
+    </div>
+    <div class="search-bar row">
+      <div class="col-md-4">
+        <input id="strSearch" class="form-control" v-model="strSearchMem"/>
+      </div>
+      <div class="col-md-2">
+        <b-button class="form-control btnSearch" @click="onSearch">Search</b-button>
+      </div>
     </div>
     <node-view />
   </div>
@@ -20,6 +22,7 @@ export default {
   },
   data () {
     return {
+      strSearchMem: '',
       new_name: '',
       new_intro: ''
     }
@@ -36,6 +39,9 @@ export default {
     },
     onMainRoot () {
       this.ACT_getMainNode()
+    },
+    onSearch () {
+
     }
   }
 }
@@ -48,6 +54,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   text-align: center;
+  margin: 30px;
 }
 
 nav {
@@ -61,5 +68,14 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+.search-bar {
+  padding: 10px;
+  background-color: #eeeeee;
+  border: 2px solid #8d8d8d;
+  border-radius: 3px;
+}
+.btnSearch {
+  background-color: #065394 !important;
 }
 </style>
