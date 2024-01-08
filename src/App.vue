@@ -3,12 +3,19 @@
     <div class="title">
     </div>
     <div class="search-bar row">
+      <div class="col-md-2">
+        <span class="lblSearch">保戶編號</span>
+      </div>
       <div class="col-md-4">
         <input id="strSearch" class="form-control" v-model="strSearchMem"/>
       </div>
       <div class="col-md-2">
         <b-button class="form-control btnSearch" @click="onSearch">Search</b-button>
       </div>
+    </div>
+    <div style="text-align: left;font-size: 18px;">
+      <font-awesome-icon icon="fa-regular fa-chart-tree-map" />
+      <span>关系图</span>
     </div>
     <node-view />
   </div>
@@ -78,5 +85,9 @@ nav a.router-link-exact-active {
 }
 .btnSearch {
   background-color: #065394 !important;
+}
+.lblSearch {
+  float: right;
+  line-height: 40px;
 }
 </style>
