@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      ACT_getMainNode: 'ACT_getMainNode'
+      ACT_getMainNode: 'ACT_getMainNode',
+      ACT_getWidthNode: 'ACT_getWidthNode'
     }),
     onNewNode () {
       console.log('new Node')
@@ -41,7 +42,7 @@ export default {
       this.ACT_getMainNode()
     },
     onSearch () {
-
+      this.ACT_getWidthNode(this.strSearchMem)
     }
   }
 }
